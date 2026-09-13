@@ -44,6 +44,26 @@ app.include_router(dashboard.router)
 app.include_router(complaints.router)
 
 
-@app.get("/")
-def root():
-    return {"service": "AIVOA PharmaQMS AI", "docs": "/docs"}
+from pathlib import Path
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
+
+STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
+
+if STATIC_DIR.exists():
+    if (STATIC_DIR / "assets").exists():
+        app.mount("/assets", StaticFiles(directory=STATIC_DIR / "assets"), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_spa(full_path: str):
+        target = STATIC_DIR / full_path
+        if full_path and target.is_file():
+            return FileResponse(target)
+        index = STATIC_DIR / "index.html"
+        if index.is_file():
+            return FileResponse(index)
+        return JSONResponse(status_code=404, content={"detail": "Not found"})
+else:
+    @app.get("/")
+    def root():
+        return {"service": "AIVOA PharmaQMS AI", "docs": "/docs"}

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: aivoa-pharma-qms
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./pharmaqms.db
+      - key: GROQ_API_KEY
+        sync: false

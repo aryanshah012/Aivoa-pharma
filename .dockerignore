@@ -1,0 +1,15 @@
+.git
+.venv
+venv
+backend/.venv
+backend/pharmaqms.db
+backend/test.db
+backend/__pycache__
+backend/.pytest_cache
+frontend/node_modules
+frontend/dist
+frontend/tsconfig.tsbuildinfo
+.env
+backend/.env
+frontend/.env
+*.log
