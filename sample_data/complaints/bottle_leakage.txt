@@ -1,0 +1,12 @@
+Subject: Product complaint - syrup bottle leakage
+
+Hello QA,
+
+This is MedServe Distributors from Delhi. We observed leakage from 8 bottles of
+Amoxicillin Syrup 250 mg/5 mL, Batch AXS240711, received on 2026-08-20.
+The carton was wet and labels were damaged. Approximately 240 mL total leaked.
+
+No patient impact reported.
+
+Thanks,
+MedServe Distributors
