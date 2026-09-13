@@ -9,7 +9,12 @@ from app.db.init_db import init_db
 from app.db.session import SessionLocal
 from app.models.complaint import Complaint
 
-SEED_PATH = Path(__file__).resolve().parent.parent / "sample_data" / "seed" / "seed_complaints.json"
+_HERE = Path(__file__).resolve().parent
+# Works locally (backend/ → project root → sample_data) and
+# in Docker (WORKDIR /app → ./sample_data copied alongside seed.py)
+_CANDIDATE_LOCAL = _HERE.parent / "sample_data" / "seed" / "seed_complaints.json"
+_CANDIDATE_DOCKER = _HERE / "sample_data" / "seed" / "seed_complaints.json"
+SEED_PATH = _CANDIDATE_LOCAL if _CANDIDATE_LOCAL.exists() else _CANDIDATE_DOCKER
 
 
 def seed() -> None:

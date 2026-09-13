@@ -19,6 +19,8 @@ COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ .
+# Copy sample data for seeding
+COPY sample_data/ ./sample_data/
 # Copy compiled frontend into static directory for FastAPI SPA serving
 COPY --from=frontend-builder /app/frontend/dist ./static
 
