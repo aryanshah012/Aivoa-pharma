@@ -5,7 +5,7 @@ pydantic==2.10.3
 pydantic-settings==2.6.1
 psycopg2-binary==2.9.10
 python-multipart==0.0.17
-pypdf==5.1.0
+pypdf==6.19.0
 groq==0.12.0
 langgraph==0.2.59
 scikit-learn==1.5.2
