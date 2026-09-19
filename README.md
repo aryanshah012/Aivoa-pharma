@@ -1,5 +1,7 @@
 # AIVOA PharmaQMS AI
 
+[![CI](https://github.com/aryanshah012/Aivoa-pharma/actions/workflows/ci.yml/badge.svg)](https://github.com/aryanshah012/Aivoa-pharma/actions/workflows/ci.yml)
+
 AI-Powered Customer Complaint Management System for Pharmaceutical Manufacturing (API & FDF products).
 
 An AI-assisted pharmaceutical complaint triage and investigation platform that converts
@@ -185,3 +187,11 @@ ingestion, multi-language support.
 
 See [docs/INTERVIEW_GUIDE.md](docs/INTERVIEW_GUIDE.md) for concise answers on the
 domain, architecture, LangGraph workflow, reliability and scaling.
+
+
+## Engineering Standards
+
+- Automated CI validates changes on pushes and pull requests.
+- Dependabot monitors Python and/or JavaScript dependencies where applicable.
+- [CONTRIBUTING.md](CONTRIBUTING.md) documents the development workflow and review expectations.
+- [SECURITY.md](SECURITY.md) documents responsible vulnerability reporting and security principles.
